@@ -1,7 +1,10 @@
+import { useGetUserData } from "@/lib/hooks/user";
 import { cn } from "@/utils/cn";
+import { getInitials } from "@/utils/getInitials";
 import { Button } from "../Button";
 import Icon, { IconName } from "../Icon";
 import { Chat, MainstackLogo, Menu, Notifications } from "../Icon/icons";
+import { Skeleton } from "../Skeleton";
 
 interface NavItems {
   icon: IconName
@@ -10,8 +13,9 @@ interface NavItems {
 }
 
 const Navbar = () => {
-  const navItems: NavItems[] = [
+  const { data, isLoading } = useGetUserData()
 
+  const navItems: NavItems[] = [
     { icon: 'NavbarHome', label: "Home", active: false },
     {
       icon: 'NavbarAnalytics',
@@ -71,9 +75,10 @@ const Navbar = () => {
 
             <div className="flex items-center gap-2 pl-[5px] pr-3 py-1 bg-gray rounded-full">
               <div className="w-8 h-8 rounded-full items-center flex justify-center bg-gradient-to-br from-[rgba(92,102,112,1)] to-[rgba(19,19,22,1)] text-white text-xs">
-                <p>
-                  OJ
-                </p>
+
+                {isLoading ? <Skeleton className="w-full h-full rounded-full" /> : <p>
+                  {getInitials(`${data?.first_name} ${data?.last_name}`)}
+                </p>}
               </div>
               <Menu className="w-6 h-6" />
             </div>

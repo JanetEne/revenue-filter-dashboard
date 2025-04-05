@@ -5,8 +5,20 @@
   --color-primary: #131316;
   --color-gray: #EFF1F6;
   --color-gray-400: #56616B;
+  --color-success-green: #0EA163;
+  --color-pending: #A77A07;
+
   --shadow-app-bar: 0px 6px 12px 0px rgba(92, 115, 131, 0.08), 0px 4px 8px 0px rgba(92, 115, 131, 0.08);
   --shadow-mode-100: 0px 2px 4px 0px rgba(45, 59, 67, 0.05), 0px 2px 6px 0px rgba(45, 59, 67, 0.06);
+
+
+  --breakpoint-xxl: 1440px;
+  --breakpoint-xlg: 1200px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xmd: 800px;
+  --breakpoint-md: 769px;
+  --breakpoint-xs: 450px;
+  --breakpoint-xxs: 340px;
 }
 
 @font-face {

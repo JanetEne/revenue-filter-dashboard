@@ -64,9 +64,8 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), 'rounded-[20px]', className)}
       {...props}
     >
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary">
+      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-full hover:bg-gray cursor-pointer">
         <Close className="h-[34px] w-[34px]" />
-        <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
       {children}
     </SheetPrimitive.Content>
