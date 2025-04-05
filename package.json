@@ -11,9 +11,12 @@
     "icons": "svgr src/assets/icons -d src/components/Icon/icons --ignore-existing --icon --typescript"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@svgr/cli": "^8.1.0",
     "@tailwindcss/vite": "^4.1.2",
+    "@tanstack/react-query": "^5.71.10",
     "@types/node": "^22.14.0",
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",

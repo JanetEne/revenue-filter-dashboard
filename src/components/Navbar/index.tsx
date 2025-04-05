@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 w-full h-[64px] z-50">
-      <div className="relative mx-3 mt-3 bg-white rounded-full shadow-lg">
+      <div className="relative mx-3 mt-3 bg-white rounded-full shadow-mode-100">
         <nav className="flex items-center justify-between px-5 py-4">
           <div className="flex-shrink-0">
             <MainstackLogo className="w-8 h-8" />
