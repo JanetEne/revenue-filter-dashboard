@@ -7,12 +7,18 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "icons": "svgr src/assets/icons -d src/components/Icon/icons --ignore-existing --icon --typescript"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.2",
+    "@svgr/cli": "^8.1.0",
     "@tailwindcss/vite": "^4.1.2",
+    "@types/node": "^22.14.0",
     "axios": "^1.8.4",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
