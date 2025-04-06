@@ -3,6 +3,7 @@ export { default as AppbarLink } from "./AppbarLink";
 export { default as AppbarMediakit } from "./AppbarMediakit";
 export { default as AppbarStore } from "./AppbarStore";
 export { default as Chat } from "./Chat";
+export { default as ChevronDown } from "./ChevronDown";
 export { default as Close } from "./Close";
 export { default as EmptyState } from "./EmptyState";
 export { default as ExpandMore } from "./ExpandMore";

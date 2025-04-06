@@ -27,3 +27,12 @@
   font-style: normal;
   src: url("./fonts/degular-regular.otf");
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on WebKit browsers */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* Hide scrollbar on IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+}
