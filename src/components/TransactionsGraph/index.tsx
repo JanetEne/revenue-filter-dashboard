@@ -1,7 +1,7 @@
 import { useGetUserTransactions } from "@/lib/hooks/transactions";
 import { useGetUserWallet } from "@/lib/hooks/wallet";
 import { useAppSelector } from "@/lib/store/storeHooks";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { format, subDays, subMonths, subYears, startOfMonth, startOfYear, eachDayOfInterval } from "date-fns";
 import { ITransactions } from "@/lib/interface/transactions";
 
