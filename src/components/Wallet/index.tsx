@@ -2,6 +2,7 @@ import { useGetUserWallet } from "@/lib/hooks/wallet"
 import { isCurrency } from "@/utils/isCurrency"
 import WalletList from "../WalletList"
 import { Button } from "../Button"
+import TransactionGraph from "../TransactionsGraph"
 
 const Wallet = () => {
   const { data } = useGetUserWallet()
@@ -17,6 +18,7 @@ const Wallet = () => {
 
           <Button className="w-[180px] h-fit text-base font-semibold">Withdraw</Button>
         </div>
+        <TransactionGraph />
       </div>
 
 
