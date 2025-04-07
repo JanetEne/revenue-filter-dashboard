@@ -1,6 +1,10 @@
-
 import type { SVGProps } from "react";
-const SvgAppbarLink = (props: SVGProps<SVGSVGElement>) => (
+
+interface SvgAppbarLinkProps extends SVGProps<SVGSVGElement> {
+  isHovered?: boolean;
+}
+
+const SvgAppbarLink = ({ isHovered = false, ...props }: SvgAppbarLinkProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -10,19 +14,19 @@ const SvgAppbarLink = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      stroke="url(#appbar-link_svg__a)"
+      stroke={isHovered ? "url(#appbar-link_svg__a)" : "oklch(60% 0.022 261.325)"}
       strokeMiterlimit={10}
       strokeWidth={2.7}
       d="M12.507 12.9h-4c-2.35 0-4.25-1.9-4.25-4.25v-.4c0-2.35 1.9-4.25 4.25-4.25h4c2.35 0 4.25 1.9 4.25 4.25v.4a4.26 4.26 0 0 1-4.25 4.25Z"
     />
     <path
-      stroke="url(#appbar-link_svg__b)"
+      stroke={isHovered ? "url(#appbar-link_svg__b)" : "oklch(70.7% 0.022 261.325)"}
       strokeMiterlimit={10}
       strokeWidth={2.7}
       d="M16.777 16.9h-4c-2.35 0-4.25-1.9-4.25-4.25v-.4c0-2.35 1.9-4.25 4.25-4.25h4c2.35 0 4.25 1.9 4.25 4.25v.4c0 2.35-1.9 4.25-4.25 4.25Z"
     />
     <path
-      fill="url(#appbar-link_svg__c)"
+      fill={isHovered ? "url(#appbar-link_svg__c)" : "oklch(70.7% 0.022 261.325)"}
       d="m5.458 18.6-.25.39c-.06.1-.18.13-.27.07l-1.28-.76c-.1-.06-.13-.18-.07-.27l.25-.39c.06-.1.03-.22-.07-.27l-.67-.39a.206.206 0 0 1 0-.35l3.34-1.88c.14-.08.3.02.3.18l-.04 3.84c0 .15-.17.25-.3.17l-.67-.39c-.08-.08-.21-.04-.27.05"
     />
     <defs>
@@ -62,4 +66,5 @@ const SvgAppbarLink = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default SvgAppbarLink;

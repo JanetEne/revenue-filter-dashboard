@@ -1,6 +1,10 @@
-
 import type { SVGProps } from "react";
-const SvgAppbarStore = (props: SVGProps<SVGSVGElement>) => (
+
+interface SvgAppbarStoreProps extends SVGProps<SVGSVGElement> {
+  isHovered?: boolean;
+}
+
+const SvgAppbarStore = ({ isHovered = false, ...props }: SvgAppbarStoreProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -10,15 +14,15 @@ const SvgAppbarStore = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fill="url(#appbar-store_svg__a)"
+      fill={isHovered ? "url(#appbar-store_svg__a)" : "oklch(60% 0.022 261.325)"}
       d="M19 22.06H4.98c-.35 0-.64-.28-.64-.64V7.4c0-.35.28-.64.64-.64H19c.35 0 .64.28.64.64v14.02c0 .35-.29.64-.64.64"
     />
     <path
-      fill="url(#appbar-store_svg__b)"
+      fill={isHovered ? "url(#appbar-store_svg__b)" : "oklch(70.7% 0.022 261.325)"}
       d="M20.46 15.72 7.59 5.22c-.46-.38-.2-1.13.4-1.13h12.87c.35 0 .64.28.64.64v10.51c0 .53-.62.82-1.04.48"
     />
     <path
-      fill="url(#appbar-store_svg__c)"
+      fill={isHovered ? "url(#appbar-store_svg__c)" : "oklch(70.7% 0.022 261.325)"}
       d="M3.54 13.58 16.41 3.07c.46-.38.2-1.13-.4-1.13H3.14c-.35 0-.64.28-.64.64v10.51c0 .53.62.83 1.04.49"
     />
     <defs>
@@ -58,4 +62,5 @@ const SvgAppbarStore = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default SvgAppbarStore;

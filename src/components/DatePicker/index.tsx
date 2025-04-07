@@ -3,8 +3,9 @@ import { format } from 'date-fns';
 import { ChevronDown } from '../Icon/icons';
 import { cn } from '@/utils/cn';
 import { Button } from '../Button';
-import { Calendar } from '../Calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '../Popover';
+import Calendar from '../Calendar';
+import dayjs from 'dayjs';
 
 interface DatePickerProps {
   date?: Date;
@@ -14,13 +15,13 @@ interface DatePickerProps {
 export function DatePicker({ date, onDateChange }: DatePickerProps) {
   const [open, setOpen] = React.useState(false);
 
-  const handleSelect = (selectedDate: Date | undefined) => {
-    onDateChange(selectedDate);
+  const handleSelect = (selectedDate: dayjs.Dayjs) => {
+    onDateChange(selectedDate.toDate());
     setOpen(false);
   };
 
   return (
-    <Popover onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
           variant={open ? 'outline' : 'secondary'}
@@ -44,11 +45,8 @@ export function DatePicker({ date, onDateChange }: DatePickerProps) {
         align="start"
       >
         <Calendar
-          mode="single"
-          selected={date}
-          onSelect={handleSelect}
-          initialFocus
-          className="p-6 font-body"
+          selectedDate={date ? dayjs(date) : undefined}
+          onDateSelect={handleSelect}
         />
       </PopoverContent>
     </Popover>

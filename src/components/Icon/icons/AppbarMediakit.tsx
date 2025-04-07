@@ -1,6 +1,10 @@
-
 import type { SVGProps } from "react";
-const SvgAppbarMediakit = (props: SVGProps<SVGSVGElement>) => (
+
+interface SvgAppbarMediakitProps extends SVGProps<SVGSVGElement> {
+  isHovered?: boolean;
+}
+
+const SvgAppbarMediakit = ({ isHovered = false, ...props }: SvgAppbarMediakitProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
@@ -10,15 +14,15 @@ const SvgAppbarMediakit = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fill="url(#appbar-mediakit_svg__a)"
+      fill={isHovered ? "url(#appbar-mediakit_svg__a)" : "oklch(70.7% 0.022 261.325)"}
       d="M15.84 4.925v6.1c0 .39-.31.7-.7.7H9.98c-.39 0-.7-.31-.7-.7v-.97h-4.3c-.39 0-.7-.31-.7-.7v-6.1c0-.39.31-.7.7-.7h5.16c.39 0 .7.31.7.7v.97h4.3c.38 0 .7.32.7.7"
     />
     <path
-      fill="url(#appbar-mediakit_svg__b)"
+      fill={isHovered ? "url(#appbar-mediakit_svg__b)" : "oklch(60% 0.022 261.325)"}
       d="M11.59 14.185H2.7c-.39 0-.7-.31-.7-.7v-6.93c0-.39.31-.7.7-.7h8.89c.39 0 .7.31.7.7v6.93c0 .39-.31.7-.7.7"
     />
     <path
-      fill="url(#appbar-mediakit_svg__c)"
+      fill={isHovered ? "url(#appbar-mediakit_svg__c)" : "oklch(70.7% 0.022 261.325)"}
       d="M21.3 21.445H2.7c-.39 0-.7-.31-.7-.7V8.475c0-.39.31-.7.7-.7h18.6c.39 0 .7.31.7.7v12.27c0 .39-.31.7-.7.7"
     />
     <defs>
@@ -58,4 +62,5 @@ const SvgAppbarMediakit = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
+
 export default SvgAppbarMediakit;

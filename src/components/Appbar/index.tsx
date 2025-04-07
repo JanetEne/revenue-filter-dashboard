@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AppbarInvoicing, AppbarLink, AppbarMediakit, AppbarStore } from "../Icon/icons";
 import { Tooltip, TooltipArrow, TooltipContent, TooltipProvider, TooltipTrigger } from "../Tooltip";
 
@@ -7,11 +8,13 @@ interface AppbarIcons {
 }
 
 const Appbar = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   const appbarIcons: AppbarIcons[] = [
-    { icon: <AppbarLink className="w-5 h-5 fill-gray" />, description: 'Link in Bio' },
-    { icon: <AppbarStore className="w-5 h-5 fill-gray" />, description: 'Store' },
-    { icon: <AppbarMediakit className="w-5 h-5 fill-gray" />, description: 'Media Kit' },
-    { icon: <AppbarInvoicing className="w-5 h-5 fill-gray" />, description: 'Invoicing' },
+    { icon: <AppbarLink className="w-5 h-5" isHovered={hoveredIndex === 0} />, description: "Link in Bio" },
+    { icon: <AppbarStore className="w-5 h-5" isHovered={hoveredIndex === 1} />, description: "Store" },
+    { icon: <AppbarMediakit className="w-5 h-5" isHovered={hoveredIndex === 2} />, description: "Media Kit" },
+    { icon: <AppbarInvoicing className="w-5 h-5" isHovered={hoveredIndex === 3} />, description: "Invoicing" },
   ];
 
   return (
@@ -21,14 +24,15 @@ const Appbar = () => {
           {appbarIcons.map((item, index) => (
             <Tooltip key={index}>
               <TooltipTrigger asChild>
-                <div className="p-2 rounded-full hover:bg-gray cursor-pointer">
+                <div
+                  className="p-2 rounded-full hover:bg-gray cursor-pointer"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                   {item.icon}
                 </div>
               </TooltipTrigger>
-              <TooltipContent 
-                side="right" 
-                sideOffset={16}
-              >
+              <TooltipContent side="right" sideOffset={16}>
                 {item.description}
                 <TooltipArrow className="fill-primary" />
               </TooltipContent>
@@ -37,7 +41,7 @@ const Appbar = () => {
         </TooltipProvider>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Appbar
+export default Appbar;

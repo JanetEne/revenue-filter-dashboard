@@ -8,7 +8,7 @@ const Wallet = () => {
   const { data } = useGetUserWallet()
 
   return (
-    <div className='grid grid-cols-[auto_271px] gap-20 mb-20'>
+    <div data-testid="wallet-container" className='grid grid-cols-[auto_271px] gap-20 mb-20'>
       <div>
         <div className="w-fit flex gap-12 items-center">
           <div>
